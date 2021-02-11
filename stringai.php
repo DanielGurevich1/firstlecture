@@ -5,38 +5,32 @@ $location1 = 'bush';
 
 $format = 'there are %d monkeys in the %s and in %s';
 
-echo sprintf($format, $num,  $location, $location1, );
-echo '<br>';
-echo md5('123');
-echo '<br>';
-echo sha1('123');
+echo sprintf($format, $num,  $location, $location1, ).'<br>';
 
+echo md5('123').'<br>';
+echo sha1('123');
 echo '<br><br><br>';
 
-echo '1 uzduotis';
-echo '<br>';
+echo '1 uzduotis'.'<br>';
+
 $name = 'Omar';
 $fname = 'Sy';
 $format = 'I like french actor %s %s.';
-echo sprintf($format, $name, $fname);
-echo '<br>';
+echo sprintf($format, $name, $fname).'<br><br>';
 
-echo '2 uzduotis';
-echo '<br>';
+
+echo '2 uzduotis'.'<br>';
+
 echo sprintf($format, strtoupper($name), strtolower($fname));
 echo '<br><br><br>';
 
-echo '3 uzduotis';
-echo '<br>';
-$name = 'Dan';
-echo '<br>';
+echo '3 uzduotis'.'<br>';
+
+$name = 'Dan'.'<br>';
 $fname = 'Gur';
-printf($name);
-echo ' ';
+printf($name).' ';
 printf($fname);
 echo '<br>';
-// printf("%10.1s", $name);
-// printf("%10.1s", $fname);
 $initilals = $name[0].' '.$fname[0];
 echo $initilals;
 echo '<br><br><br>';
@@ -58,7 +52,7 @@ echo '5 uzduotis';
 echo '<br>';
 $sentence = "An American in Paris.";
 echo $sentence;
-$trans = array('A' => '*', 'a' => '*');
+$trans = ['A' => '*', 'a' => '*'];
 
 echo '<br>';
 echo strtr('An American in Paris.', $trans);
@@ -69,9 +63,6 @@ echo '6 uzduotis';
 echo '<br>';
 $sentence = "An American in Parisaaaaa.";
 echo $sentence;
-// foreach (count_chars($sentence, 1) as $a => $val) {
-    //     echo "there were $val instances of \"", chr($a), "\" in the string. \n";
-    // }
 
     echo '<br>';
 $a = substr_count($sentence, 'a');
@@ -86,7 +77,7 @@ echo '7 uzduotis';
 echo '<br>';
 $sentence = "An American in Parisaaaaa.";
 echo trim($sentence, "aAeEiI");
-$vowels = array("a", "e", "i", "o", "u", "A", "E", "I", "O", "U", "y");
+$vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U", "y"];
 $onlyconsonants = str_replace($vowels, "", $sentence);
 echo '<br>';
 
@@ -115,8 +106,7 @@ echo '8 uzduotis';
 echo '<br>';
 echo $str = 'Star Wars: Episode '.str_repeat(' ',
 rand(0,5)). rand(1,9) . ' - A New Hope'; 
-// $a = substr_count($sentence, 'int');
-// echo $str[20];
+
 $int = (int) filter_var($str, FILTER_SANITIZE_NUMBER_INT);
 echo '<br>';
 echo "Episode is: $int";
