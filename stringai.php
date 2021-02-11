@@ -148,4 +148,26 @@ echo $shortWordsCount;
 // }
 // $str = str_split($sentence, 5);
 // print_r($str);
+
+echo '<br><br><br>';
+
+echo '10 uzduotis';
+
+echo '<br>';
+$n = 3;
+function getRandomLetters($n){
+    echo 'Letters: ';
+    $chars = 'qwertyuiopasdfghjklzxcvbnm';
+    echo $chars.'<br>';
+    echo 'Random: ';
+   
+    $randomLetters = '';
+
+    for ($i =0; $i < $n; $i++) {
+        $index = rand(0, strlen($chars) - 1);
+        $randomLetters.=$chars[$index];
+    }
+    echo $randomLetters;
+}
+echo getRandomLetters($n);
 ?>
