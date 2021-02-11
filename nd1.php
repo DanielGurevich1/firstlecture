@@ -127,9 +127,9 @@ echo '<br><br><br>';
 echo '10 uzduotis - laikrodis';
 echo '<br>';
 
-$h = rand(0, 24);
-$min = rand(0, 60);
-$sec = rand(0, 60);
+$h = rand(0, 23);
+$min = rand(0, 59);
+$sec = rand(0, 59);
 
 echo $h;
 echo ' : ';

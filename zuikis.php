@@ -25,9 +25,9 @@ echo '<br>';
 echo 'Ats:';
 echo '<br>';
 if ($pirmas > $antras) {
-    echo ($pirmas / $antras);
+    echo round($pirmas / $antras);
 } else {
-    echo ($antras / $pirmas);
+    echo round($antras / $pirmas);
 }
 
 echo '<br>';
