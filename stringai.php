@@ -129,15 +129,6 @@ foreach($words as $value) {
 }
 
 echo $shortWordsCount;
-// for ($i=0; $i<15; $i++) {
-
-//     if (strlen($words[$i]) < 5) {
-//         print_r(str_word_count($words1, 1));
-        
-//     }
-// }
-// $str = str_split($sentence, 5);
-// print_r($str);
 
 echo '<br><br><br>';
 
