@@ -15,11 +15,7 @@ echo '<br>'.'2 task'.'<br>';
     for ($j = 0; $j < 300; $j++) {
        
         $x = rand(0,300).' ';
-    //    if  ($x > 250) {
-    //         echo "<font color=red>$x</font>";
-    // } else {
-    // echo $x;
-    // }
+    
     if ($x > 150) {
         $countBigNums++;
     }
@@ -30,7 +26,8 @@ echo '<br>'.'<br>'."$countBigNums Numbers larger than 150 were randomly generate
 echo '<br><br><br>'.'3 task'.'<br>';
 $numOfNumbers = 0;
 $array = [];
-for ($i=1; $i < rand(3000, 4000); $i++) {
+$rand = rand(3500, 4000);
+for ($i=1; $i < $rand; $i++) {
       if (($i % 77) == 0) {
           $lastNumber = $i;
           array_push($array, $lastNumber.', ');

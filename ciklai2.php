@@ -31,9 +31,9 @@ while (true) {
     }
 
     echo '<br>'.'<h2>task 6.3</h2>';
-    $herbas=0;
+   
     
-    while ($herbuSuma < 3) {
+    while ($herbuSuma < 4) {
         $coin = rand(0, 1);
                 
                     if ($coin == 0 ) {
@@ -62,13 +62,12 @@ while ($Taskai1 < 222 && $Taskai2 < 222) {
     $kazioTaskai = rand(10, 20);
     $petroTaskai = rand(5, 25);
 
-
-    if ($kazioTaskai > $petroTaskai) {
-        $Taskai1 += $kazioTaskai;
-    echo "Petras surinko $petroTaskai, Kazys surinko $kazioTaskai, tad laimejo Kazys surinkes $Taskai1.".'<br>';
-} else {
+    $Taskai1 += $kazioTaskai;
     $Taskai2 += $petroTaskai;
-    echo "Petras surinko $petroTaskai, Kazys surinko $kazioTaskai, tad laimejo Petras surinkes $Taskai2.".'<br>';
+    if ($kazioTaskai > $petroTaskai) {
+    echo "Petras surinko $petroTaskai, Kazys surinko $kazioTaskai, kol kas laimi Kazys surinkes $Taskai1.".'<br>';
+} else {
+    echo "Petras surinko $petroTaskai, Kazys surinko $kazioTaskai, kol kas laimi Petras surinkes $Taskai2.".'<br>';
 
 }
 }
