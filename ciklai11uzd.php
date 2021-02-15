@@ -4,8 +4,12 @@ Skaičiai turi būti unikalūs (t.y. nesikartoti). Sugeneruokite antrą stringą
 
 
 <?php
-
+$array = [];
 for ($i=0; $i < 50; $i++) {
-echo rand(0,200).' ';
+    $num = rand(0, 200);
+ $array += $num;
+ echo $array;
 }
+
+
 ?>
