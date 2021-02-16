@@ -16,16 +16,20 @@ echo '<pre>'; //kad atrodytu graziai
 print_r($masyvas);
 
 //iteruojame su foreach
-
+echo '<br>'.'xx';
 foreach($masyvas as $index => $value) {
-    if ('zurnalai' == $value) {
-$value = 'kazkas';
-    }
+//     if ('zurnalai' == $value) {
+// $value = 'kazkas';
+//     }
 }
 echo '<br>';
 
 foreach($masyvas as $index => $value) {
     echo '<br>';
+    if ('zurnalai' == $value) {
+
+        $value = '0';
+    }
     echo $index.'==>'.$value;
 }
 echo '<br>';
@@ -66,7 +70,7 @@ $masyvas = ['red', 'green', 'yellow', 'blue'];
 
 foreach($masyvas as &$value) {
     
-unset($value);
+// unset($value);
 }
 foreach($masyvas as $value) {
     echo '<br>';
@@ -102,6 +106,21 @@ for ($i = 0;$i <= 5;$i++){
    echo '<br>';
 }
 echo 'Ciklo pabaiga';
+
+// $array1 = array("a" => "green", "red", "blue", "red");
+// $array2 = array("b" => "green", "yellow", "red");
+// $result = array_diff($array2, $array1);
+
+// print_r($result);
+
+$keys = array('foo', 5, 10, 'bar');
+$a = array_fill_keys($keys, 0);
+print_r($a);
+
+$a = array_fill(5, 6, 'vv');
+$b = array_fill(-2, 4, 'pear');
+print_r($a);
+print_r($b);
 
 ?>
 <!-- // => skiria indekasa nuo reiksmes -->
