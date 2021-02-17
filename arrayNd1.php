@@ -1,6 +1,13 @@
 <?php
 
 // Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29), kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.
+
+$masyvas = [];
+foreach(range(1, 30) as $val){
+    $masyvas[] = rand(5,25);
+}
+echo '<pre>';
+print_r($masyvas);
 echo '<br>'.'Home work Arrays, task nr. 1';
   $array_var = [];
   for ($i = 0;$i <= 29;$i++){
@@ -9,7 +16,9 @@ echo '<br>'.'Home work Arrays, task nr. 1';
       if ($a > 10) {
           $countA++;
       }
-} 
+}
+//perdaryti su foreach
+
 echo '<pre>';
 print_r($array_var);
 echo '<br>';
