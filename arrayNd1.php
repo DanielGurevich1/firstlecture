@@ -79,7 +79,7 @@ echo '<br>'.$key;
 echo '<br>';
 echo "2.I".'<br>';
 
-foreach($array_var as $index => $value) {
+foreach($array_var as $index => &$value) {
     if($index % 2 ==0) unset($index, $value);
      echo '<br>';
      print_r($index.'==>'.$value);
