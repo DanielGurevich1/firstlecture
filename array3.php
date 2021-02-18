@@ -54,3 +54,11 @@ echo '<pre>';
 print_r($combine);
 echo '<br>';
 ?>
+
+<!-- $arr_05 = [];
+
+foreach($arr_01 as $key => $value) {​​
+
+    $arr_05[$value] = $arr_02[$key];
+
+}​​ -->
