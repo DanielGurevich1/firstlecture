@@ -50,4 +50,67 @@ function recursive($num){
 }
 // $startNum = 1;
 recursive(1);
+echo '<br>'.'anonimine funkcija'.'<br>';
+$func = function($a, $b){
+    return $a[0] <=> $b[0];
+};
+function aaa($a, $b){
+    return $a[0] <=> $b[0];
+};
+    $masyvas = [
+    ['a','d'],
+    ['v','e'],
+    ['a','c'],
+    ['s','r'],
+];
+usort($masyvas, function ($a, $b){
+    return $a[0] <=> $b[0];
+}
+);
+_dc($masyvas);
+
+echo '<br>'.'anonimine funkcija - matomumo rybos'.'<br>';
+$result = 0;
+$one = function()
+{ 
+    var_dump($result); 
+};
+
+$two = function() use ($result) // kaip panaudoti $result
+{ 
+    var_dump($result);
+ };
+
+$three = function() use (&$result)
+{ var_dump($result); };
+
+$result++;
+
+$one();    // NULL: $result nepasiekiamas
+$two();    // int(0): $result nukopijuojamas
+$three();    // int(1)
+$result++;
+$three();    // int(1)
+
+echo '<br>'.'anonimine rekursine funkcija '.'<br>';
+
+$func = function ($limit = NULL) use (&$func) { 
+    static $current = 10; 
+     
+    // tikrinam eigą
+    if ($current <= 0) { 
+        //išeinam 
+        return FALSE;
+    } 
+     
+    // spausdinam reikšmę.
+    echo "$current<br>"; 
+     
+    $current--; 
+     
+    $func(); 
+ }; 
+  //  Kviečiam funkciją
+ $func();
+ 
 

@@ -5,6 +5,10 @@
 echo '<br>'."task 3".'<br>';
 
 $array = ['A', 'B', 'C', 'D'];
+$aa = 0;
+$bb = 0;
+$cc = 0;
+$dd = 0;
 $newArray = [];
 for($i = 0; $i < 200; $i++) {
     $randomElement = $array[array_rand($array)];
@@ -69,7 +73,8 @@ print_r($newABCDarray);
 echo '<br>';
 
 $combinations = array_count_values($newABCDarray);
-echo '<br>'.$combinations.'<br>';
+echo '<pre>'.
+print_r($combinations);
 // $result = array_merge($newArray1, $newArray2, $newArray3);
 // print_r($result);
 $rezultUnique = array_unique($newABCDarray);
