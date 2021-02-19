@@ -16,3 +16,5 @@ foreach(range(1, 5) as $index1 => $val1){
     }
 
 print_r($masyvas);
+
+$array3 = [];
