@@ -1,31 +1,6 @@
 <?php
 
-// $random_number_array = range(0, 100);
-// shuffle($random_number_array );
-// $random_number_array = array_slice($random_number_array, 0, 200);
-// echo '<pre>';
-// print_r($random_number_array);
-// sort($random_number_array);
-// print_r($random_number_array);
-
 // Sukurkite masyvą iš 30 elementų. Kiekvienas masyvo elementas yra masyvas [user_id => xxx, place_in_row => xxx] user_id atsitiktinis unikalus skaičius nuo 1 iki 1000000, place_in_row atsitiktinis skaičius nuo 0 iki 100. 
-// foreach ($array55 as $user_id => $value1) {
-//     # code...
-// }
-
-
-// $n = 5;
-// $rands = [];
-// for($i=0; $i<$n;$i++) {
-//   $ok = true;
-//   while($ok) {
-//     $x=mt_rand(0,$n);
-//     $ok = in_array($x, $rands) ;
-//   }
-//   $rands[$i]=$x;
-// }
-// echo '<pre>';
-// print_r($rands);
 
 for ($i=0; $i < 30; $i++) { 
     
@@ -41,3 +16,20 @@ for ($i=0; $i < 30; $i++) {
 }
 echo '<pre>';
 print_r($array55);
+
+echo '<br>'.'<h2>task 5.2.6</h2>';
+// 6.	Išrūšiuokite 5 uždavinio masyvą pagal user_id didėjančia tvarka. Ir paskui išrūšiuokite pagal place_in_row mažėjančia tvarka.
+
+usort($array55, function($a, $b){
+    return $a["user_id"] <=> $b["user_id"];
+});
+
+print_r($array55);
+
+echo '<br>'.'second part'.'<br>';
+
+usort($array55, function($a, $b) {
+    return $b["place_in_row"] <=> $a["place_in_row"];
+});
+
+print_r($array55).'<br>';
