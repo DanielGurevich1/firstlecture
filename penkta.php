@@ -33,3 +33,19 @@ usort($array55, function($a, $b) {
 });
 
 print_r($array55).'<br>';
+
+echo '<br>'.'<h2>task 5.2.7</h2>';
+// 7.	Prie 6 uždavinio masyvo antro lygio masyvų pridėkite dar du elementus: name ir surname. Elementus užpildykite stringais iš atsitiktinai sugeneruotų lotyniškų raidžių, kurių ilgiai nuo 5 iki 15.
+
+// d)	Visus masyvus “pailginkite” iki 7 elementų
+// foreach ($masyvas as &$value) {
+//     while (count($value) < 7) {
+//         $value[] = rand(1,5);
+//     }
+// }
+foreach ($array55 as &$value) {
+    while (count($value) < 5) {
+        $value[] = rand(1,5);
+    }
+}
+print_r($array55).'<br>';
