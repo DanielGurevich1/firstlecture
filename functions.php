@@ -70,18 +70,22 @@ usort($masyvas, function ($a, $b){
 _dc($masyvas);
 
 echo '<br>'.'anonimine funkcija - matomumo rybos'.'<br>';
+
 $result = 0;
 $one = function()
 { 
-    var_dump($result); 
+
 };
+var_dump($result); 
 
 $two = function() use ($result) // kaip panaudoti $result
-{ 
+{ echo '<pre>';
     var_dump($result);
  };
 
 $three = function() use (&$result)
+{ var_dump($result); };
+$four = function() use (&$result)
 { var_dump($result); };
 
 $result++;
@@ -91,6 +95,8 @@ $two();    // int(0): $result nukopijuojamas
 $three();    // int(1)
 $result++;
 $three();    // int(1)
+$result++;
+$four();
 
 echo '<br>'.'anonimine rekursine funkcija '.'<br>';
 
@@ -108,7 +114,7 @@ $func = function ($limit = NULL) use (&$func) {
      
     $current--; 
      
-    $func(); 
+    $func(1,5); 
  }; 
   //  Kviečiam funkciją
  $func();

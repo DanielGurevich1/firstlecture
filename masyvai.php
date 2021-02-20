@@ -12,16 +12,16 @@ foreach($masyvas as $value) {
 }
 echo '<br>';
 $masyvas = ['mano knygos', 'zurnalai' => 'seni žurnalai', 'zaislai' => 'katės žaislai', 'mano batai', 'test'];
-echo '<pre>'; //kad atrodytu graziai
+// echo '<pre>'; //kad atrodytu graziai
 print_r($masyvas);
 
 //iteruojame su foreach
 echo '<br>'.'xx';
-foreach($masyvas as $index => $value) {
+// foreach($masyvas as $index => $value) {
 //     if ('zurnalai' == $value) {
 // $value = 'kazkas';
 //     }
-}
+// }
 echo '<br>';
 
 foreach($masyvas as $index => $value) {
@@ -66,17 +66,20 @@ echo end($m).',';
 // echo '<pre>'; //kad atrodytu graziai
 // print_r($masyvas);
 echo '<br><br>';
-$masyvas = ['red', 'green', 'yellow', 'blue'];
+$masyvas = ['red', 'green', 'yellow', 'blue', 'test', 'testauskas'];
+echo '<pre>';
+print_r($masyvas);
 
-foreach($masyvas as &$value) {
-    
-// unset($value);
-}
-foreach($masyvas as $value) {
-    echo '<br>';
-    echo $value; 
 
-}
+        foreach($masyvas as &$value) {
+            
+        unset($value);
+        }
+        foreach($masyvas as $value) {
+            echo '<br>';
+            echo $value; 
+
+        }
 
 echo '<br><br><br>';
 $A = 5;
@@ -86,14 +89,14 @@ echo $B;
 echo '<br><br><br>';
 while(true) {
 
-    for ($i = 1;$i <= 15;$i++){
-        if (rand(0, 10)> 9){
+    for ($i = 1;$i <= 13;$i++){
+        if (rand(0, 10)> 8){
             break 2;
         }
         echo $i;
         echo '<br>';
       }
-      echo 'Ciklo pabaiga';
+      echo 'Ciklo pabaiga 1'.'<br>';
       
 }
 echo '<br><br><br>';

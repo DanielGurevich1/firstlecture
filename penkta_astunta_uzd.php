@@ -1,8 +1,8 @@
 <?php
-
+echo '<br>'.'<h2>task 5.2.5</h2>';
 // Sukurkite masyvą iš 30 elementų. Kiekvienas masyvo elementas yra masyvas [user_id => xxx, place_in_row => xxx] user_id atsitiktinis unikalus skaičius nuo 1 iki 1000000, place_in_row atsitiktinis skaičius nuo 0 iki 100. 
-
-for ($i=0; $i < 30; $i++) { 
+$elements = 2;
+for ($i=0; $i < $elements; $i++) { 
     
     $rands = [];
     $num = false;
@@ -11,7 +11,7 @@ for ($i=0; $i < 30; $i++) {
         $userId = mt_rand(0,$userIdMax);
         $num = !in_array($userId, $rands) ;
     }
-    $array55[] = ["user_id"=>$userId, "place_in_row"=>rand(0,100)];
+    $array55[] = ['user_id'=>$userId, 'place_in_row'=>rand(0,100)];
 
 }
 echo '<pre>';
@@ -37,15 +37,13 @@ print_r($array55).'<br>';
 echo '<br>'.'<h2>task 5.2.7</h2>';
 // 7.	Prie 6 uždavinio masyvo antro lygio masyvų pridėkite dar du elementus: name ir surname. Elementus užpildykite stringais iš atsitiktinai sugeneruotų lotyniškų raidžių, kurių ilgiai nuo 5 iki 15.
 
-// d)	Visus masyvus “pailginkite” iki 7 elementų
-// foreach ($masyvas as &$value) {
-//     while (count($value) < 7) {
-//         $value[] = rand(1,5);
-//     }
-// }
-foreach ($array55 as &$value) {
-    while (count($value) < 5) {
-        $value[] = rand(1,5);
-    }
+echo 'Letters: ';
+$chars = 'qwertyuiopasdfghjklzxcvbnm';
+
+for ($i=0; $i < $elements; $i++) { 
+        
+    $array55[$i]['name'] = substr(str_shuffle($chars), 0, rand(5, 15));
+    $array55[$i]['surname'] = substr(str_shuffle($chars), 0, rand(5, 15));
 }
-print_r($array55).'<br>';
+
+print_r($array55);

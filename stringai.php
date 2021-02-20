@@ -122,6 +122,7 @@ echo '<br>';
 // print_r(str_word_count($sentence,1 ));
 $words = explode(" ", $sentence);
 echo '<br>';
+$shortWordsCount=0;
 foreach($words as $value) {
     if(mb_strlen($value) <= 5){
         $shortWordsCount++;
