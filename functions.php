@@ -42,29 +42,35 @@ echo '<br>'.'recursive'.'<br>';
 
 function recursive($num){
     echo $num, '<br>'; //iejimo punktas
-    if($num < 5){
+    if($num < 9){
         //Kviečiame save. Padidiname numerį vienetu.
-         recursive($num + 1); // return -> ismeta is funkcijos
+          recursive($num * 2); // return -> ismeta is funkcijos
     }
-    echo "$num blabla<br>"; //isejimo punktas
+
+    echo $num.'<br>'.'recursive - '; //isejimo punktas
+    // echo "$num blabla<br>"; //isejimo punktas
 }
 // $startNum = 1;
 recursive(1);
+echo '<br>'.'recursive2'.'<br>';
+recursive(8);
+
+
 echo '<br>'.'anonimine funkcija'.'<br>';
-$func = function($a, $b){
-    return $a[0] <=> $b[0];
-};
-function aaa($a, $b){
-    return $a[0] <=> $b[0];
-};
+// $func = function($a, $b){
+//     return $a[0] <=> $b[0];
+// };
+// function aaa($a, $b){
+//     return $a[0] <=> $b[0];
+// };
     $masyvas = [
-    ['a','d'],
-    ['v','e'],
-    ['a','c'],
-    ['s','r'],
+    ['3','1'],
+    ['4','2'],
+    ['22','11'],
+    ['333','444'],
 ];
 usort($masyvas, function ($a, $b){
-    return $a[0] <=> $b[0];
+    return $b[0] <=> $a[0];
 }
 );
 _dc($masyvas);
