@@ -16,12 +16,27 @@ for ($i=0; $i < 10; $i++) {
 }
 echo '<pre>';
 print_r($masyvas) ;
+
+// per paskaita
+$arrayx = [];
+
+foreach (range(1, 10) as $index => $value) {
+    foreach (range(1,5) as $index1 => $value1) {
+        // $arrayx[$index][$index1] = rand(5, 40);
+        $arrayx[$index][] = rand(5, 40); // [] -> autoatiskai generuojamas
+    }
+    # code...
+}
+echo '<pre>';
+print_r($arrayx) ;
+
 // _dc($masyvas);
 
 echo '<br>'.'<h2>task 5.2.2.a)</h2>';
 // a)	Suskaičiuokite kiek masyve yra elementų didesnių už 10;
 $counter = 0;
 foreach($masyvas as $smallArray){
+    _d($smallArray, '$smallArray');
     foreach($smallArray as $value){
         if ($value > 10){
             $counter++;
@@ -43,10 +58,34 @@ echo '<br>'.'<h2>task 5.2.2.b)</h2>';
 //        }
 //     }
 // }
-$maxValue = [];
-foreach($masyvas as $value){
-    $maxValue[] = max($value);
+$maxValue = PHP_INT_MIN;
+// foreach($masyvas as $value){
+//     $maxValue[] = max($value);
+// }
+$arraySum1 =[];
+$Sum = [];
+foreach ($arrayx as $index => $value) {
+    $Sum[$index] = array_sum($value);
+    foreach ($value as $index1 => $value1) {
+        $arrayx[$index][$index1] = rand(5, 40);
+        // $arrayx[$index][] = rand(5, 40); // [] -> autoatiskai generuojamas
+        if ($value1 > $maxValue) {
+            $maxValue = $value1;
+        }
+        $arraySum1[$index] = ($arraySum1[$index] ?? 0) + $value1;
+    }
+    $arrayx[$index][]=rand(100, 200);
+    $arrayx[$index][]=rand(1000, 2000);
+    
 }
+
+_dc($maxValue);
+echo 'sum value in this array is:';
+_dc($arraySum1);
+echo 'E value in this array is:';
+_dc($Sum);
+echo '<pre>';
+print_r($arrayx) ;
 
 echo '<pre>';
 echo 'max value in this array is:';
@@ -97,19 +136,31 @@ foreach ($masyvas as $mazasMasyvas) {
 $array5 = [];
 
 
-                        for ($i=0; $i < 10; $i++) { 
-                            $array5[$i]=[];
-                            $arrayLength = rand(2, 20);
-                            for ($j=0; $j < $arrayLength; $j++) { 
-                                // array_push($array5, chr(rand(65,90)));
-                                $array5[$i][$j]=chr(rand(65,90));
-                            }
-                            sort($array5[$i]);
-                        }
-                            echo '<br>';
-                            echo '<pre>';
-                            print_r($array5) ;
-
+        for ($i=0; $i < 10; $i++) { 
+            $array5[$i]=[];
+            $arrayLength = rand(2, 20);
+                for ($j=0; $j < $arrayLength; $j++) { 
+                    // array_push($array5, chr(rand(65,90)));
+                    $array5[$i][$j]=chr(rand(65,90));
+                }
+            sort($array5[$i]);
+        }
+            echo '<br>';
+            echo '<pre>';
+            print_r($array5) ;
+$az = range('A', 'Z');
+_dc($az);
+$dvimatisMasyvas = [];
+foreach (range(1,10) as $key => $value3) {
+    $length = rand(2, 20);
+    foreach (range(1, $length) as $key1 => $value4) {
+        $dvimatisMasyvas[$key][$key1] = $az[rand(0, 25)];
+        range('A', 'Z');
+    }
+    sort($dvimatisMasyvas[$key]);
+}
+echo '<br>'.'<h2>task 5.2.3 New</h2>';
+_dc($dvimatisMasyvas);
 
 echo '<br>'.'<h2>task 5.2.4</h2>';
 // 4.	Išrūšiuokite trečio uždavinio pirmo lygio masyvą taip, kad elementai kurių masyvai trumpiausi eitų pradžioje.

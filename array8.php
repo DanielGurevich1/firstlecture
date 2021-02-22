@@ -5,7 +5,7 @@ echo '<br>'.'<h2>task 5.2.8</h2>';
 
 
 
-for ($i=0; $i < 3; $i++) { 
+for ($i=0; $i < 10; $i++) { 
     $num = rand(0,5);
     echo $num.', ';
     for ($j=0; $j < $num; $j++) { 
@@ -14,7 +14,7 @@ for ($i=0; $i < 3; $i++) {
         
     }
     if ($num == 0) {
-        $masyvas[$i][$j] = rand(0, 10);
+        $masyvas[$i] = rand(0, 10);
 
     }
 }
