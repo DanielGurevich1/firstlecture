@@ -154,9 +154,13 @@ function isPrime($num) {
     return true;
 }
 for ($i=0; $i < 3; $i++) { 
-    $array9[$i] = rand(1, 33);
+    $array9[$i] = rand(1, 33); // 3 5 9
 }
-    while (!isPrime($array9[count($array9)-1]) || !isPrime($array9[count($array9)-2]) || !isPrime($array9[count($array9)-3])) {
+    while (
+    !isPrime($array9[count($array9)-1]) || //$i = 2
+    !isPrime($array9[count($array9)-2]) || //1
+    !isPrime($array9[count($array9)-3]) //0
+    ) {
         $array9[] = rand(1, 33);
     }
     echo '<pre>';   
@@ -177,51 +181,51 @@ echo '<br>'.'<h2>task 6.10</h2>';
 
 // vel skaiciuojame vidurki - kvieciame rekursine funkcija dar karta
 
-$array = [];
-for ($i=0; $i < 10; $i++) { 
-    for ($j=0; $j < 10; $j++) { 
-        $array[$i][$j]=rand(1, 100);
-    }
-}
-function countAveragePrimeNums($array) {
-    print_r($array);
-     $countPrimes = 0;
-     $sumOfPrimeNums = 0;
+// $array = [];
+// for ($i=0; $i < 10; $i++) { 
+//     for ($j=0; $j < 10; $j++) { 
+//         $array[$i][$j]=rand(1, 100);
+//     }
+// }
+// function countAveragePrimeNums($array) {
+//     print_r($array);
+//      $countPrimes = 0;
+//      $sumOfPrimeNums = 0;
      
-    foreach ($array as $value) {
-        foreach ($value as $number) {
-            if (isPrime($number)) {
-                $sumOfPrimeNums += $number;
-                $countPrimes++;
-            }
-        } 
-    }
-    return  $sumOfPrimeNums / $countPrimes; 
+//     foreach ($array as $value) {
+//         foreach ($value as $number) {
+//             if (isPrime($number)) {
+//                 $sumOfPrimeNums += $number;
+//                 $countPrimes++;
+//             }
+//         } 
+//     }
+//     return  $sumOfPrimeNums / $countPrimes; 
   
-}
-echo 'Average of all prime numbers is:'. countAveragePrimeNums($array);
+// }
+// echo 'Average of all prime numbers is:'. countAveragePrimeNums($array);
 
-function smallest($array) {
-    $smallestNum = 101;
-    foreach ($array as $value) {
-        foreach ($value as $number) {
-            if ($number < $smallestNum) {
-                $smallestNum = $number;
-            }
-        }
-    }
-    return $smallestNum;
-}
-$x = smallest($array);
-while (countAveragePrimeNums($array) < 70 ){
-    for ($i=0; $i < 10; $i++) { 
-        for ($j=0; $j < 10; $j++) { 
-            if ($array[$i][$j] == $x) {
-                $array[$i][$j] = $x+3;
-                break 2;
-            }
-        }
-    }
-    $x = smallest($array);
-}
-echo '<br>'.'kas cia'.countAveragePrimeNums($array).'<br>';
+// function smallest($array) {
+//     $smallestNum = 101;
+//     foreach ($array as $value) {
+//         foreach ($value as $number) {
+//             if ($number < $smallestNum) {
+//                 $smallestNum = $number;
+//             }
+//         }
+//     }
+//     return $smallestNum;
+// }
+// $x = smallest($array);
+// while (countAveragePrimeNums($array) < 70 ){
+//     for ($i=0; $i < 10; $i++) { 
+//         for ($j=0; $j < 10; $j++) { 
+//             if ($array[$i][$j] == $x) {
+//                 $array[$i][$j] = $x+3;
+//                 break 2;
+//             }
+//         }
+//     }
+//     $x = smallest($array);
+// }
+// echo '<br>'.'kas cia'.countAveragePrimeNums($array).'<br>';
