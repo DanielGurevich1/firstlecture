@@ -1,4 +1,27 @@
 <?php
+
+// 
+
+$kodas = md5(time());
+_d(time());
+_d($kodas);
+// funkcija gauna callback reiksme
+function h1($text) {
+    if (is_array($text)){
+        $text = $text[0];
+    }
+    return '<h1 style="display:inline">'.$text.'</h1>';
+}
+//callback -- anonimine funkcija --
+$pakeistasKodas = preg_replace_callback('/\d+/', function($match) {
+_d($match);
+// static $c = 1;
+// return $c++;
+return h1($match);
+}, $kodas);
+
+_d($pakeistasKodas);
+echo $pakeistasKodas;
 //     $a = randString(rand(12,15));
 // function randString($length){
 //     $chars = "qwertyuiopasdfghjklzxcvbnm";
