@@ -1,5 +1,6 @@
 <?php 
-header('Location; http://localhost:8888/firstlecture/webm4/orange.php');
+header('Location: http://localhost:8888/firstlecture/webm4/orange.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,11 +11,10 @@ header('Location; http://localhost:8888/firstlecture/webm4/orange.php');
     <title>NR4</title>
 </head>
 
-<body style='background: yellow;'>
+<body style='background: #fff700;'>
 
+<!-- <a href="/webm4/orange.php">enter color code</a> -->
 
-<a href="/webm4/orange.php" style='color: black;'>enter color code</a>
-<!-- <a href="web2.php"style='color: blue;'>AnyPage></a> -->
 
 
 </body>

@@ -15,10 +15,10 @@ Nenaudodami jokių konkrečių $_GET ar $_POST reikšmių, o tik tikrindami pač
 
 <?php 
 if (isset($_POST['post'])) {
-    echo "style='background: yellow';";
+    echo "style='background: #fee227';";
 }
 if(isset($_GET['get'])) {
-    echo "style='background: green';";
+    echo "style='background: #3cb043';";
 
 }
 

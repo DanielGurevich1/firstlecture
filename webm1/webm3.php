@@ -1,3 +1,5 @@
+
+<!-- 3.	Perdarykite 2 uždavinį taip, kad spalvą būtų galimą įrašyti į laukelį ir ją išsiųsti mygtuku GET metodu formoje. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,23 +11,22 @@
 
 <body
 
-<?php 
+    <?php 
 
-_d($_GET);
-if (isset($_GET['color'])) {
-    $color = $_GET['color'];
-    echo "style='background: #".$_GET['color'].";'";
-}
-?>
->
+    _d($_GET);
+    if (isset($_GET['color'])) {
+        $color = $_GET['color'];
+        echo "style='background: #".$_GET['color'].";'";
+    }
+?>>
 <a href="web3.php" style='color: blue;'>enter color code</a>
-<!-- <a href="web2.php"style='color: blue;'>AnyPage></a> -->
 
 <form action="" method="get">
 
-<input type="text" name="color">
+    <input type="text" name="color">
 
 
-<button type="submit">click</button>
+<button type="submit">click to get a color</button>
+
 </body>
 </html>

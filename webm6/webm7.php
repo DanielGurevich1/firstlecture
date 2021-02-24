@@ -9,18 +9,18 @@ Nenaudodami jokių konkrečių $_GET ar $_POST reikšmių, o tik tikrindami pač
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebMech6</title>
+    <title>WebMech7</title>
 </head>
 <body
 
 <?php 
-if (isset($_POST['post'])) {
-    echo "style='background: yellow';";
-}
 if(isset($_GET['get'])) {
     echo "style='background: green';";
+    
+}
+if (isset($_POST['post'])) {
+    echo "style='background: #fee227';";
     $redirect = header("Location: http://localhost:8888/firstlecture/webm6/webm7.php");
-
 }
 
 ?>>
