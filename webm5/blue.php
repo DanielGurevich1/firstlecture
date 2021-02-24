@@ -4,7 +4,7 @@
 _d($_GET);
 
 if (isset($_GET['nuoroda'])) {
-    header('Location: http://localhost:8888/firstlecture/webm5/blue.php');
+    header('Location: http://localhost:8888/firstlecture/webm5/red.php');
 }
 ?>
 <!DOCTYPE html>
@@ -16,10 +16,10 @@ if (isset($_GET['nuoroda'])) {
     <title>NR5</title>
 </head>
 
-<body style="background: yellow;">
+<body style="background: blue;">
 
 
-<a href="?nuoroda=1">RED</a>
+<a href="?nuoroda=1">click</a>
 
 
 </body>

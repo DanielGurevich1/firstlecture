@@ -2,9 +2,9 @@
 
 _d($_GET);
 
-if (isset($_GET['nuoroda'])) {
-    header('Location: http://localhost:8888/firstlecture/webm5/blue.php');
-}
+// if (isset($_GET['nuoroda'])) {
+//     header('Location: http://localhost:8888/firstlecture/webm5/blue.php');
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,13 +15,10 @@ if (isset($_GET['nuoroda'])) {
     <title>NR5</title>
 </head>
 
-<body style="background: red;">
+<body style="background: #ff007f;">
 
+<!-- <a href="?nuoroda=1">click</a> -->
 
-<!-- <a href="/webm5/red.php">RED</a> -->
-
-<a href="?nuoroda=1">click</a>
-<!-- <a href="?color=red">RED</a> -->
 
 </body>
 </html>
