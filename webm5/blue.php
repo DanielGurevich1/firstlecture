@@ -5,6 +5,7 @@ _d($_GET);
 
 if (isset($_GET['nuoroda'])) {
     header('Location: http://localhost:8888/firstlecture/webm5/red.php');
+    die;
 }
 ?>
 <!DOCTYPE html>

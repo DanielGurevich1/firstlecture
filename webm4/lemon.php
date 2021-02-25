@@ -1,5 +1,6 @@
 <?php 
 header('Location: http://localhost:8888/firstlecture/webm4/orange.php');
+die;
 
 ?>
 <!DOCTYPE html>
