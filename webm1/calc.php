@@ -1,16 +1,21 @@
 <?php
-$x = (float) ($_POST['x'] ?? 0); //?? jeigu x == 0 ar x = null - priskiriam default reiksme 0;
-$y = (float) ($_POST['y'] ?? 0); 
 
-$sum = $x + $y;
-setcookie ( 'Rezultatas' , $sum);
-header('location: http://localhost:8888/firstlecture/webm1/calc.php');
-die;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $x = (float) ($_POST['x'] ?? 0); //?? jeigu x == 0 ar x = null - priskiriam default reiksme 0;
+    $y = (float) ($_POST['y'] ?? 0); 
+    $sum = $x + $y;
+    setcookie ( 'Rezultatas' , $sum);
+    
+    header('location: http://localhost:8888/firstlecture/webm1/calc.php');
+    die;
+}
+
 
 
 if(isset($_COOKIE['Rezultatas'])) {
     $rez = $_COOKIE['Rezultatas'];
-setcookie('Rezultatas', '', time() - 5555);
+setcookie('Rezultatas', '', time() - 555);
 }
 ?>
 

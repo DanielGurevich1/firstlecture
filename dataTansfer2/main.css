@@ -1,0 +1,17 @@
+.container {
+    display: inline-block;
+    width: 300px;
+    margin-top: 100px;
+    margin-left: calc((100% - 300px) / 2);
+    /* position: relative; */
+    border-color: black;
+    border-radius: 5%;
+    background-color: rgb(186, 186, 201);
+}
+
+.form-row  {
+    display: inline-block;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 10px;
+}
