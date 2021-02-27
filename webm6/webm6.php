@@ -21,6 +21,10 @@ if(isset($_GET['get'])) {
     echo "style='background: #3cb043';";
 
 }
+if(isset($_GET['env'])) {
+    echo "style='background: #000000';";
+
+}
 
 ?>>
     <form action=""method="get">
@@ -30,6 +34,11 @@ if(isset($_GET['get'])) {
 
     <form action=""method="post">
     <button type="submit" name="post">Yellow</button>
+    </form>
+<br>
+
+    <form action=""method="get">
+    <button type="submit" name="env">???</button>
     </form>
 </body>
 </html>

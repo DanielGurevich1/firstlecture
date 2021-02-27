@@ -1,18 +1,13 @@
-<?php
-header('Location: http://localhost:8888/firstlecture/webm4/final.php');
-die;
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>webm 4 orange</title>
+    <title>Document</title>
 </head>
-
-<body style='background: #FFA500;'>
+<body>
+<body style='background: #fff900;'>
 
 </body>
 </html>

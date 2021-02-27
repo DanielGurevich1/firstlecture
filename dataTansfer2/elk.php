@@ -44,11 +44,11 @@
             <p><input type="checkbox" name="animal[]" value="cat" >CAT</p>
             <p><input type="checkbox" name="animal[]" value="dier" >DIER</p>
             <p><input type="checkbox" name="animal[]" value="boar" >BOAR</p>
-            <p><input type="submit" name="submit" value="submit" >TRY IT</p>
+            <p><input type="submit" name="submit" value="submit" ></p>
             
 
         
-    </form>
+    </form> 
     <div>
         <!-- <h3>Atsiųstų skaičių (x) ir (y) suma lygi  <?= $rez ?? '---' ?>.</h3> -->
     </div>
@@ -60,14 +60,18 @@ if(isset($_POST["submit"])) {
     if (!empty($_POST["animal"])) {
         
         foreach ($_POST["animal"] as $animal) {
-            echo '<p>'.'You have selected:' .$animal.'</p>';
+            if ($_POST["animal"] == "elk") {
+                echo "<p style='color:blue;'>You were right.$animal</p>";
+            } else {
+                echo '<p style="color:red;"> You have selected</p>';
+
+            }
         }
     } else {
         echo 'Please choose at least one';
     }
 } 
-
- echo (value = "elk" ? 'you are right' : 'one more guess?');
+//  echo (value = "elk" ? 'you are right' : 'one more guess?');
 ?>
 </main>
 </body>

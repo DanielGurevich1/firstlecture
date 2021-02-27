@@ -1,7 +1,9 @@
 <!-- 6.	Padarykite puslapį su dviem mygtukais. 
 Mygtukus įdėkite į dvi skairtingas formas- vieną GET ir kitą POST. 
 
-Nenaudodami jokių konkrečių $_GET ar $_POST reikšmių, o tik tikrindami pačius masyvus, nuspalvinkite foną žaliai, kai paspaustas mygtukas iš GET formos ir geltonai- kai iš POST. -->
+Nenaudodami jokių konkrečių $_GET ar $_POST reikšmių, o tik tikrindami pačius masyvus, nuspalvinkite foną žaliai, kai paspaustas mygtukas iš GET formos ir geltonai- kai iš POST. 
+
+7.	Pakartokite 6 uždavinį. Papildykite jį kodu, kuris naršyklę po POST metodo peradresuotų tuo pačiu adresu (t.y. į patį save) jau GET metodu.-->
 
 <!DOCTYPE html>
 <html lang="en">

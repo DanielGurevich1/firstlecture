@@ -4,7 +4,7 @@ Mygtukus įdėkite į dvi skairtingas formas- vieną GET ir kitą POST.
 Nenaudodami jokių konkrečių $_GET ar $_POST reikšmių, o tik tikrindami pačius masyvus, nuspalvinkite foną žaliai, kai paspaustas mygtukas iš GET formos ir geltonai- kai iš POST. -->
 
 <?php 
-$b = '#ffffff';
+$b = '#696000';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $b = '#fee227';
@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     $b = '#3cb043';
 }
-
+echo $_SERVER['SERVER_NAME'];
 // if (isset($_POST['post'])) {
 //     echo "style='background: #fee227';";
 // }

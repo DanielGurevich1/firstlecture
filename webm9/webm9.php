@@ -1,12 +1,10 @@
 <?php
 $rand = rand(3, 10);
 $check = '<input type="checkbox" name="checks[]" value="1">';
-// $masyvas = [];
-$array = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];
-// $letterArray = range('a', 'c');
 
+$array = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];
+$countChecks = 0;
 for ($i=0; $i < $rand; $i++) { 
-    
     print_r($array[$i].$check);
     echo '<br>';
    }
@@ -17,11 +15,11 @@ for ($i=0; $i < $rand; $i++) {
         $color = '#000';
     }
 
-    if(isset($_POST["submit"])) {
+    if(isset($_POST["check"])) {
         if (!empty($_POST["checks"])) {
             echo 'You have selected following letters';
             foreach ($_POST["checks"] as $check) {
-                echo '$check';
+                echo '$check++';
             }
         } else {
             echo 'Please choose at least one';
@@ -46,8 +44,8 @@ Padarykite taip, kad paspaudus mygtuką, fono spalva pasikeistų į baltą, form
 <body style="background: <?= $color?>; color: blue;"> 
 
 <form action="" method="post">
-
-<button type="submit">POST</button>
+<input type="text" placeholder="form input" style="margin: 20px;"> <br>
+<button type="submit" name="check" style="margin: 20px;">CLICK HERE</button>
 </form>
 </body>
 </html>

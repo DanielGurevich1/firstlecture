@@ -10,7 +10,6 @@
 </head>
 
 <body
-
 <?php 
 
 _d($_GET);
@@ -18,9 +17,11 @@ if (isset($_GET['color'])) {
     $color = $_GET['color'];
     echo "style='background: #".$_GET['color'].";'";
 }
+
 ?>
+
 >
-<a href="webm1/web2.php" style='color: blue;'>enter any color after ? sign</a>
+<a href="http://localhost:8888/firstlecture/webm1/webm2.php" style='color: blue;'>enter any color after ? sign</a>
 
 
 </body>

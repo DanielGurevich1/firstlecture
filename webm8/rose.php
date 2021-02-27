@@ -2,9 +2,10 @@
 
 _d($_GET);
 
-// if (isset($_GET['nuoroda'])) {
-//     header('Location: http://localhost:8888/firstlecture/webm5/blue.php');
-// }
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    header('Location: http://localhost:8888/firstlecture/webm8/pink.php');
+    die;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +22,7 @@ _d($_GET);
 <form action="submit">
 
 <input type="text">
+<button>???</button>
 </form>
 
 </body>

@@ -7,7 +7,7 @@
     <title>NR8</title>
 </head>
 
-<body style="background: pink;">
+<body style="background: red;">
 <?php
 
 // _d($_POST);
@@ -17,7 +17,7 @@ if (isset($_POST['nuoroda'])) {
 }
 ?>
 
-<form action=""method="post">
+<form action="http://localhost:8888/firstlecture/webm8/rose.php"method="post">
     <button type="submit" name="color">Go to Rose</button>
     </form>
 

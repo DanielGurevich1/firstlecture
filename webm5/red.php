@@ -20,7 +20,7 @@ if (isset($_GET['nuoroda'])) {
 
 <!-- <a href="/webm5/red.php">RED</a> -->
 
-<a href="?nuoroda=1">click</a>
+<a href="?nuoroda=1" style="color:white; font-size:50px; padding: 100px;">click</a>
 <!-- <a href="?color=red">RED</a> -->
 
 </body>
