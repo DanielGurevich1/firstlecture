@@ -1,23 +1,27 @@
 <?php
-if(empty($_POST)) {
-    $form = '<form action="" method="post">';
-    $num = rand(3, 10);
-    foreach (range(3, $num) as $_) {
-        $form .='<input type="checkbox" name="checks[]" value="1">';
-    }
-    $form .= '<input type="submit" name="check">FORM</form>';
-    $bgColor = '#222';
-    $fontColor = '#000';
-} else {
-    $bgColor = '#fff';
-    $fontColor = '#000';
-    if (!isset($_POST['checks'])) {
-        $form = '<span style="font-size: 40px;">0</span>';
+session_start();
+$countV = (isset($_SESSION['countV'])) ? $_SESSION['countV'] :0;
+$_SESSION['countV'] = $countV;
+    if(empty($_POST)) {
+        $form = '<form action="" method="post">';
+            $num = rand(3, 10);
+                foreach (range(3, $num) as $_) {
+                    $form .='<input type="checkbox" name="checks[]" value="1">';
+                }
+                $form .= '<input type="submit" name="check">FORM</form>';
+            $bgColor = '#222';
+        $fontColor = '#fff';
     } else {
-        $form = '<span style="font-size: 40px;">'.count($_POST['checks']).'</span>';
-
+        $bgColor = '#fff';
+        $fontColor = '#000';
+        if (!isset($_POST['checks'])) {
+            $form = '<span style="font-size: 40px;">0</span>';
+                } else {
+                    $form = '<span style="font-size: 40px;">'.count($_POST['checks']).'</span>';
+            }
     }
-}
+$countV++;
+echo " printed $countV";
 
 ?>
 

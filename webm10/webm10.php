@@ -1,4 +1,5 @@
 <?php
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $color = '#fff';
         } else {
@@ -11,13 +12,15 @@
 
                     _d($_POST['vilnius']);
                     $sk = count($_POST['vilnius']);
+                    
                     echo 'checked boxes: '.$sk;
-                    die;
+                  
+                    exit('<br><br><a href="http://localhost:8888/firstlecture/webm10/webm10.php">reload a task</a>');
+                    
                     
                 }
             }
             _d($_POST);
-
  ?>
 
 <!DOCTYPE html>
@@ -37,18 +40,26 @@
 <?php
 $rand = rand(3, 10);
 $array = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];
-    for ($i=0; $i < $rand; $i++) { 
-            ?>
+    session_start();
+        $countChecks = (isset($_SESSION["countChecks"])) ? $_SESSION["countChecks"] : 0;
+            $_SESSION["countChecks"] = $countChecks;    
+
+for ($i=0; $i < $rand; $i++) { 
+    ?>
                 <label><?=$array[$i]?></label>
                 <input type="checkbox" name="vilnius[]" value="1">
-            <?php
-        echo '<br>';
-    }?>
-
+                <?php
+                $countChecks++;
+            echo '<br>';
+        }
+    
+    echo "generated $countChecks";
+    ?>
 
 </form>
-<br><a href="http://localhost:8888/firstlecture/webm9/webm9.php">reload a task</a>
+<!-- <br><a href="http://localhost:8888/firstlecture/webm9/webm9.php">reload a task</a> -->
 </body>
+<button><?=$countChecks?></button>
 
 </html>
 

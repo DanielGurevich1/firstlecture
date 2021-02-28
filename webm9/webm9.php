@@ -12,7 +12,7 @@
                     _d($_POST['vilnius']);
                     $sk = count($_POST['vilnius']);
                     echo 'checked boxes: '.$sk;
-                    die;
+                  exit('<br><a href="http://localhost:8888/firstlecture/webm9/webm9.php">reload a task</a>');
                     
                 }
             }
@@ -32,22 +32,21 @@
 <body style="background: <?= $color?>; color: blue;"> 
 
     <form action="" method="post">
-    <button type="submit" name="checkButton" style="margin: 20px;">CLICK HERE</button><br>
+    <button style="margin-left:200px; padding: 20px;" type="submit" name="checkButton" >CLICK HERE</button><br>
 
 <?php
 $rand = rand(3, 10);
 $array = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];
     for ($i=0; $i < $rand; $i++) { 
             ?>
-                <label><?=$array[$i]?></label>
-                <input type="checkbox" name="vilnius[]" value="1">
+                <label style="margin-left:200px; font-size:x-large; padding: 20px;"><?=$array[$i]?></label>
+                <input style="margin-left:20px; font-size:x-large;" type="checkbox" name="vilnius[]" value="1">
             <?php
         echo '<br>';
     }?>
 
 
 </form>
-<br><a href="http://localhost:8888/firstlecture/webm9/webm9.php">reload a task</a>
 </body>
 
 </html>
