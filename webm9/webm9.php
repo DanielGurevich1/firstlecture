@@ -1,36 +1,24 @@
 <?php
-$rand = rand(3, 10);
-$check = '<input type="checkbox" name="checks[]" value="1">';
-
-$array = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];
-$countChecks = 0;
-for ($i=0; $i < $rand; $i++) { 
-    print_r($array[$i].$check);
-    echo '<br>';
-   }
-
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $color = '#fff';
-    } else {
-        $color = '#000';
-    }
-
-    if(isset($_POST["check"])) {
-        if (!empty($_POST["checks"])) {
-            echo 'You have selected following letters';
-            foreach ($_POST["checks"] as $check) {
-                echo '$check++';
-            }
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $color = '#fff';
         } else {
-            echo 'Please choose at least one';
+            $color = '#000';
         }
-    }
-       _d($_SERVER);
+            if(isset($_POST['checkButton'])) {
+                if(empty($_POST['vilnius'])) {
+                    echo 'nieko nepasirinkta';
+                } else {
+
+                    _d($_POST['vilnius']);
+                    $sk = count($_POST['vilnius']);
+                    echo 'checked boxes: '.$sk;
+                    die;
+                    
+                }
+            }
+            _d($_POST);
+
  ?>
-
-<!-- Padarykite juodą puslapį, kuriame būtų POST forma, mygtukas ir atsitiktinis kiekis (3-10) checkbox su raidėm A,B,C…  
-
-Padarykite taip, kad paspaudus mygtuką, fono spalva pasikeistų į baltą, forma išnyktų ir atsirastų skaičius, rodantis kiek buvo pažymėta checkboksų (ne kurie, o kiek). -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,12 +28,26 @@ Padarykite taip, kad paspaudus mygtuką, fono spalva pasikeistų į baltą, form
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>task 9 </title>
 </head>
-<body>
+
 <body style="background: <?= $color?>; color: blue;"> 
 
-<form action="" method="post">
-<input type="text" placeholder="form input" style="margin: 20px;"> <br>
-<button type="submit" name="check" style="margin: 20px;">CLICK HERE</button>
+    <form action="" method="post">
+    <button type="submit" name="checkButton" style="margin: 20px;">CLICK HERE</button><br>
+
+<?php
+$rand = rand(3, 10);
+$array = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];
+    for ($i=0; $i < $rand; $i++) { 
+            ?>
+                <label><?=$array[$i]?></label>
+                <input type="checkbox" name="vilnius[]" value="1">
+            <?php
+        echo '<br>';
+    }?>
+
+
 </form>
+<br><a href="http://localhost:8888/firstlecture/webm9/webm9.php">reload a task</a>
 </body>
+
 </html>
