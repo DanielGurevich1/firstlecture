@@ -37,14 +37,18 @@
 <?php
 $rand = rand(3, 10);
 $array = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K'];
-    for ($i=0; $i < $rand; $i++) { 
-            ?>
-                <label style="margin-left:200px; font-size:x-large; padding: 20px;"><?=$array[$i]?></label>
-                <input style="margin-left:20px; font-size:x-large;" type="checkbox" name="vilnius[]" value="1">
-            <?php
-        echo '<br>';
-    }?>
+    // for ($i=0; $i < $rand; $i++) { 
+    //         ?>
+                <!-- <label style="margin-left:200px; font-size:x-large; padding: 20px;"><?=$array[$i]?></label> -->
+    <!-- //             <input style="margin-left:20px; font-size:x-large;" type="checkbox" name="vilnius[]" value="1"> -->
+    //         <?php
+    //     echo '<br>';
+    // }?>
 
+<?php foreach($array as $key => $letter) : ?>
+    <?php if($key+1 > $rand) break ?>
+<span style="color:pink;"><input type="checkbox" name="<?= $letter?>"</span>
+    <?php endforeach ?>
 
 </form>
 </body>

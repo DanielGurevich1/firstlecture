@@ -20,7 +20,7 @@
         echo "style='background: #".$_GET['color'].";'";
     }
 ?>>
-<a href="web3.php" style='color: blue;'>enter color code</a>
+<a href="./webm3.php" style='color: blue;'>enter color code</a>
 
 <form action="" method="get">
 

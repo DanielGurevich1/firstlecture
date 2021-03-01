@@ -1,21 +1,4 @@
 <?php
-// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-//     $x = (float) ($_POST['x'] ?? 0); //?? jeigu x == 0 ar x = null - priskiriam default reiksme 0;
-//     $y = (float) ($_POST['y'] ?? 0); 
-//     $sum = $x + $y;
-//     setcookie ( 'Rezultatas' , $sum);
-    
-//     header('location: http://localhost:8888/firstlecture/dataTansfer2/elk.php');
-//     die;
-// }
-
-
-
-// if(isset($_COOKIE['Rezultatas'])) {
-//     $rez = $_COOKIE['Rezultatas'];
-// setcookie('Rezultatas', '', time() - 555);
-// }
 
 ?>
 <!DOCTYPE html>
@@ -32,14 +15,13 @@
 
 <div class="left-column">
     <h1 style="margin-left:30px; color:darkorange" class="page-title">Who is this animal?</h1>
-   
+   <img src="./elk.jpeg" alt="elk">
 </div>
 
 <div class="right-column">
     
     <form class="form" method="post">
        
-            <label class="label" for="Username">X</label>
             <p><input type="checkbox" name="animal[]" value="elk" >ELK</p>
             <p><input type="checkbox" name="animal[]" value="cat" >CAT</p>
             <p><input type="checkbox" name="animal[]" value="dier" >DIER</p>
@@ -47,13 +29,12 @@
             <p><input type="submit" name="submit" value="submit" ></p>
             
 
-        
+       
     </form> 
     <div>
         <!-- <h3>Atsiųstų skaičių (x) ir (y) suma lygi  <?= $rez ?? '---' ?>.</h3> -->
     </div>
     
-
  </div>
 <?php
 if(isset($_POST["submit"])) {
@@ -63,14 +44,13 @@ if(isset($_POST["submit"])) {
             if ($_POST["animal"] == "elk") {
                 echo "<p style='color:blue;'>You were right.$animal</p>";
             } else {
-                echo '<p style="color:red;"> You have selected</p>';
+                echo 'You have selected'.'$animal';
 
             }
         }
-    } else {
-        echo 'Please choose at least one';
+    } else {        echo 'Please choose at least one';
     }
-} 
+} _d($_POST); 
 //  echo (value = "elk" ? 'you are right' : 'one more guess?');
 ?>
 </main>

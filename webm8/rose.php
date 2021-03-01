@@ -2,7 +2,7 @@
 
 _d($_GET);
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: http://localhost:8888/firstlecture/webm8/pink.php');
     die;
 }
