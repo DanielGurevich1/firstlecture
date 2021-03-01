@@ -30,3 +30,5 @@ $masyvas['dienotvarke'][] = 'miegoti';
 $stringas = json_encode($masyvas);
 
 file_put_contents('kate.json', $stringas);
+
+print_r($masyvas);
