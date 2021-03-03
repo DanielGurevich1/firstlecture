@@ -3,10 +3,15 @@
 // post scenarijus
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $banana = $_POST['count'] ?? 0;
-    $banana = (int) $banana;
-    update($banana); //sukuria banana
-    header('Location :'.URL);
+    $id = $_GET['id'] ?? 0;
+    $id = (int) $id;
+
+    $bananas = $_POST['count'] ?? 0;
+    $bananas = (int) $bananas;
+
+    update($id, $bananas); //sukuria banana
+    header('Location:'.URL);
+    die;
 }
 
 //get scenarijus
@@ -15,7 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
    $id = (int) $id;
     $box = getBox($id);
     if(!$box) {
-        header('Location :'.URL); // atgal i index
+        header('Location:'.URL); // atgal i index
+        die;
     }
 }
 ?>
@@ -25,15 +31,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update banana box ID:<?$box['id']?></title>
+    <title>Update banana :<?$box['id']?></title>
 </head>
 <body>
-    <h1>Banana</h1>
-    <a href="<?= URL?> create.php">Create</a>
+    <h1>Update banana box ID: <?= $box['id'] ?></h1>
+    <a href="<?= URL?>create.php">Create</a>
     <a href="<?= URL?>">Index</a>
 
-   <form action="<?= URL?>update.php?id=<?$box['id']?>" method="post">
-   Bananas in box <input type="text" value="$box['banana']" name="count">
+   <form action="<?= URL?>update.php?id=<?= $box['id']?>" method="post">
+   Bananas in box <input type="text" value="<?= $box['banana']?>" name="count">
    <button type="submit">Update</button>
    
    </form>

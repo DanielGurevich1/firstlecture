@@ -3,10 +3,11 @@
 // post scenarijus
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $banana = $_POST['count'] ?? 0;
-    $banana = (int) $banana;
-    create($banana); //sukuria banana
-    header('Location :'.URL);
+    $bananas = $_POST['count'] ?? 0;
+    $bananas = (int) $bananas;
+    create($bananas); //sukuria banana
+    header('Location:'.URL);
+    die;
 }
 
 ?>
@@ -19,12 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>NEW banana box</title>
 </head>
 <body>
-    <h1>Banana</h1>
-    <a href="<?= URL?> login.php">Create</a>
-    <a href="<?= URL?>">Index</a>
+    <h1>Create Banana :) </h1>
+    <a href="<?= URL ?>create.php">Create</a>
+    <a href="<?= URL ?>">Index</a>
 
-   <form action="<?=URL?>create.php" method="post">
-   Bananas in box <input type="text" name="count">
+   <form action="<?= URL ?>create.php" method="post">
+   Bananas in box: <input type="text" name="count">
    <button type="submit">Create</button>
    
    </form>

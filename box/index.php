@@ -1,8 +1,8 @@
 <?php require __DIR__.'/bootstrap.php';
-_d(getNextId());
-_d(getNextId());
-_d(getNextId());
-_d(getNextId());
+// _d(getNextId());
+// _d(getNextId());
+// _d(getNextId());
+// _d(getNextId());
 
 ?>
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ _d(getNextId());
 </head>
 <body>
     <h1>Banana</h1>
-    <a href="<?= URL?> login.php">Create</a>
+    <a href="<?= URL?>create.php">Create</a>
     <a href="<?= URL?>">Index</a>
 
     <ul>
@@ -27,8 +27,8 @@ _d(getNextId());
 
     <span>Count: <?=$box['banana']?></span>
 
-    <a href="<?=URL?>update.php?id"<?=$box['id']?>">[edit]</a>
-    <a href="<?=URL?>delete.php?id"<?=$box['id']?>">[delete]</a>
+    <a href="<?= URL?>update.php?id="<?=$box['id']?>">[edit]</a>
+    <a href="<?= URL?>delete.php?id="<?=$box['id']?>">[delete]</a>
 
     <form action="" method="post">
     <button type="submit">[delete]</button>

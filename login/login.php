@@ -2,9 +2,9 @@
 
 //jau prisijungusio vart scenarijus
 
-if ($_SESSION['login']) && !==$_SESSION['login']) {
-    # code...
-}
+// if ($_SESSION['login']) && !==$_SESSION['login']) {
+//     # code...
+// }
 
 //post metodo scenarijus
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $postName = $_POST['name'] ?? '';
     $postPass = $_POST['pass'] ?? '';
-    
+  
     foreach ($users as $user) {
         if ($postName == $user['name']) { // turim useri
             if (password_verify('$postPass', $user['pass'])) { // tiktinam pass input
@@ -24,6 +24,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
     }
+    
     $_SESSION['msg'] = 'Password or Name is invalid.';
     header('Location: '.URL.'/login.php');
     die;

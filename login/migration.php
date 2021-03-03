@@ -2,7 +2,7 @@
 
 $users = [
     [
-        'name' => 'peter', 'surname' => 'peterson', 'pass' => password_hash('1235', PASSWORD_DEFAULT)],
+        'name' => 'peter', 'surname' => 'peterson', 'pass' => password_hash(1235, PASSWORD_DEFAULT)],
     
     
         ['name' => 'Mark', 'surnema' => 'peterson', 'pass' => password_hash('1238', PASSWORD_DEFAULT)],
