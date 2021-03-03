@@ -10,70 +10,49 @@
 </head>
 <body>
     <!-- navigation -->
-    
+<?php
+include 'dataBase.php'; //siuncia duomenys i lentele account list
 
+?>
+    
 <!-- table -->
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Name</th>
+      <th scope="col">Surname</th>
+      <th scope="col">ID</th>
+      <!-- <th scope="col">Handle</th> -->
       <th scope="col">Delete Account</th>
       <th scope="col">Add Money Page</th>
       <th scope="col">Send Money Page</th>
 
     </tr>
-</thead>
+  </thead>
 <tbody>
-    <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+ <?php foreach (json_decode(file_get_contents('BankDB.json'), 1) as $user)  { ?>
+  <tr>
+  <!-- // kaire puse - velue -->
+        <th scope="row">#</th>
+        <td><?=$user['Name']?></td>
+        <td><?=$user['Surname']?></td>
+        <td><?=$user['ID number']?></td>
+        
+        <!-- <td>@mdo</td> -->
         <td><button type="button" class="btn btn-outline-danger">Delete</button></td>
         <td><button type="button" class="btn btn-outline-primary">Go to Add Money</button></td>
         <td><button type="button" class="btn btn-outline-success">Go to Send Money</button></td>
-    </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td><button type="button" class="btn btn-outline-danger">Delete</button></td>
-        <td><button type="button" class="btn btn-outline-primary">Go to Add Money</button></td>
-        <td><button type="button" class="btn btn-outline-success">Go to Send Money</button></td>
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry </td>
-        <td>@twitter</td>
-        <td><button type="button" class="btn btn-outline-danger">Delete</button></td>
-        <td><button type="button" class="btn btn-outline-primary">Go to Add Money</button></td>
-        <td><button type="button" class="btn btn-outline-success">Go to Send Money</button></td>
-    </tr>
+    </tr> 
+    <?php
+    }
+ ?>
     
   </tbody>
 </table>
-</table>
-<?php
-include 'dataBase.php';
-echo '<pre>';
-var_dump($accountOwner);
-echo '</pre>';
-?>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
 
 
