@@ -1,7 +1,8 @@
 <?php include_once __DIR__.'/header.php';
 require __DIR__.'/bootstrap.php';?>
 <?php 
-$individualAccountNum = rand(1234567890, 999999999999);
+$individualAccountNum = rand(123456, 999999);
+$balance = 0;
 
 ?>
 <!DOCTYPE html>
@@ -17,7 +18,9 @@ $individualAccountNum = rand(1234567890, 999999999999);
 
 // print_r($_POST);
 // neveikia ifas
-$clients = [];
+
+$_SERVER['REQUEST_METHOD'] === 'POST';
+// $clients = [];
 if (empty($_POST['A']))  {
     echo 'Name field must be filled';
         } elseif (empty($_POST['B'])) {
@@ -25,8 +28,8 @@ if (empty($_POST['A']))  {
         } elseif (empty($_POST['C'])) {
           echo 'ID field must be a number';
         } else {
-     createClient($clients) ;
-    //  'dataBase.php';      
+    //  createClient($clients) ;
+     include 'dataBase.php';      
         }
   
 ?>
@@ -39,10 +42,13 @@ if (empty($_POST['A']))  {
     <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" value="" name="B">
   </div>
   <div class="col">
-    <input type="number" class="form-control" placeholder="ID number" aria-label="Last name" value="" name="C">
+    <input type="number" class="form-control" placeholder="ID number" aria-label="ID Number" value="" name="C">
   </div>
   <div class="col">
-    <input type="number" class="form-control" placeholder="Account number" aria-label="Last name" value="<?=$individualAccountNum?>" value="" name="D" disabled>
+    <input type="number" class="form-control" placeholder="Balance" aria-label="Balance" value="<?=$balance?>" name="D" >
+  </div>
+  <div class="col">
+    <input type="number" class="form-control" placeholder="Account number" aria-label="Account_number" value="<?=$individualAccountNum?>" name="AC" >
   </div>
   <div class="col">
       <button type="submit" class="btn btn-outline-primary">Create New Account</button>

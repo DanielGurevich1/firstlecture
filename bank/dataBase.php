@@ -5,7 +5,8 @@ $accountOwner =
         'Name' => $_POST['A'],
         'Surname' => $_POST['B'],
         'ID number' => $_POST['C'],
-        // 'Account number' => $_POST['D'],
+        'Balance' => $_POST['D'],
+        'Account_number' => $_POST['AC'],
     
 ];
 // $stringas = json_encode($accountOwner);

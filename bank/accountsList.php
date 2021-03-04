@@ -11,20 +11,24 @@ require __DIR__.'/bootstrap.php';?>
 </head>
 <body>
     <!-- navigation -->
-<?php
-include 'dataBase.php'; //siuncia duomenys i lentele account list
+<!-- <?php
+// include 'dataBase.php'; //siuncia duomenys i lentele account list
 
 ?>
-    
+     -->
 <!-- table -->
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
+
       <th scope="col">Name</th>
       <th scope="col">Surname</th>
       <th scope="col">ID</th>
-      <!-- <th scope="col">Handle</th> -->
+
+      <th scope="col">Balance</th>
+      <th scope="col">Acc Num</th>
+      
       <th scope="col">Delete Account</th>
       <th scope="col">Add Money Page</th>
       <th scope="col">Send Money Page</th>
@@ -36,11 +40,14 @@ include 'dataBase.php'; //siuncia duomenys i lentele account list
   <tr>
   <!-- // kaire puse - velue -->
         <th scope="row">#</th>
+
         <td><?=$user['Name']?></td>
         <td><?=$user['Surname']?></td>
         <td><?=$user['ID number']?></td>
         
-        <!-- <td>@mdo</td> -->
+        <td><?=$user['Balance']?></td>
+        <td><?=$user['Account_number']?></td>
+
         <td><button type="button" class="btn btn-outline-danger">Delete</button></td>
         <td><button type="button" class="btn btn-outline-primary">Go to Add Money</button></td>
         <td><button type="button" class="btn btn-outline-success">Go to Send Money</button></td>

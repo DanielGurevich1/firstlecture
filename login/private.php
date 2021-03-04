@@ -1,7 +1,9 @@
 <?php require __DIR__.'/bootstrap.php';
-if ($_SESSION['login']) || !=$_SESSION['login']) {
-    header('Location: '.URL.'/login.php');
+if (!isset($_SESSION['login']) || 1 != $_SESSION['login']) {
+    header('Location: '.URL.'login.php');
     die;
+}
+_d($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +15,7 @@ if ($_SESSION['login']) || !=$_SESSION['login']) {
     <title>Private</title>
 </head>
 <body>
-    <h1>Hellow <?=$_SESSION['user']['name']?></h1>
-    <a href="<?= URL?> login.php">Login</a>
+    <h1>Hellow <?= $_SESSION['user']['name']?></h1>
+    <a href="<?= URL?> login.php?logout">LogOut</a>
 </body>
 </html>

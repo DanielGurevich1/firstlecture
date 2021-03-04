@@ -38,5 +38,10 @@
     
     <?php endforeach ?>
     </ul>
+
+    
+   <!-- Bananas in box: <input type="text" id="count">
+   <button type="button">Create</button> -->
+
 </body>
 </html>

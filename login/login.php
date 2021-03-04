@@ -1,10 +1,19 @@
 <?php require __DIR__.'/bootstrap.php';
 
+// LOGOUT scenarijus
+
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header('Location: '.URL.'login.php');
+    die;
+}
+
 //jau prisijungusio vart scenarijus
 
-// if ($_SESSION['login']) && !==$_SESSION['login']) {
-//     # code...
-// }
+if (isset($_SESSION['login']) && 1 == $_SESSION['login']) {
+    header('Location: '.URL.'private.php');
+    die;
+}
 
 //post metodo scenarijus
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -16,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
   
     foreach ($users as $user) {
         if ($postName == $user['name']) { // turim useri
-            if (password_verify('$postPass', $user['pass'])) { // tiktinam pass input
+            if (password_verify($postPass, $user['pass'])) { // tiktinam pass input
                 $_SESSION['login'] = 1;
                 $_SESSION['user'] = $user;
                 header('Location: '.URL.'private.php');
@@ -25,20 +34,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
     
-    $_SESSION['msg'] = 'Password or Name is invalid.';
-    header('Location: '.URL.'/login.php');
+    $_SESSION['err_msg'] = 'Password or Name is invalid.';
+    header('Location: '.URL.'login.php');
     die;
 }
 
 //logout scenarijus
-if (isset($_GET['logout'])) {
-    // 1 variantas
-    $_SESSION['login'] = 0;
-               unset($_SESSION['user']);  
-               // 2 var
-               session_destroy();
-               header('Location: '.URL.'/login.php');
-}
+// if (isset($_GET['logout'])) {
+//     // 1 variantas
+//     $_SESSION['login'] = 0;
+//                unset($_SESSION['user']);  
+//                // 2 var
+//                session_destroy();
+//                header('Location: '.URL.'/login.php');
+// }
 
 ?>
 
@@ -53,10 +62,10 @@ if (isset($_GET['logout'])) {
 <body> 
     <h1>Login page</h1>
     <?php if(isset($_SESSION[''])) : ?>
-        <h3 style="color:red"><?=$_SESSION['msg'] ?></h3>
-        <?php unset($_SESSION['msg'] )?>
+        <h3 style="color:red"><?= $_SESSION['err_msg'] ?></h3>
+        <?php unset($_SESSION['err_msg'] )?>
         <?php endif ?>
-    <form action=""<?= URL?>" method="post">
+    <form action="<?= URL?>login.php" method="post">
 NAME: <input type="text" name="name">
 PASSWORD: <input type="password" name="pass">
 <button type="submit">Login</button>

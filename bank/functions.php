@@ -76,6 +76,8 @@ function getNextId():int
     }
     $key = file_get_contents('data/id.json');
     $key = json_decode($key, 1);
+
+    _dd($key);
     $id = (int) $key['id'];
     $id['id'] = $id + 1;
     $key = json_encode($key);
