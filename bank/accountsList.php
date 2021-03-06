@@ -1,5 +1,7 @@
 <?php include_once __DIR__.'/header.php';
-require __DIR__.'/bootstrap.php';?>
+require __DIR__.'/bootstrap.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,10 +30,10 @@ require __DIR__.'/bootstrap.php';?>
 
       <th scope="col">Balance</th>
       <th scope="col">Acc Num</th>
-      
-      <th scope="col">Delete Account</th>
+
       <th scope="col">Add Money Page</th>
       <th scope="col">Send Money Page</th>
+      <th scope="col">Delete Account</th>
 
     </tr>
   </thead>
@@ -48,9 +50,15 @@ require __DIR__.'/bootstrap.php';?>
         <td><?=$user['Balance']?></td>
         <td><?=$user['Account_number']?></td>
 
-        <td><button type="button" class="btn btn-outline-danger">Delete</button></td>
         <td><button type="button" class="btn btn-outline-primary">Go to Add Money</button></td>
         <td><button type="button" class="btn btn-outline-success">Go to Send Money</button></td>
+
+    <td>
+        <form action="" method="post">
+        <input type="hidden" name="C" value="<?=$user['ID number']?>">
+        <button type="submit" class="btn btn-outline-danger">Delete</button>
+        </form>
+    </td>
     </tr> 
     <?php
     }

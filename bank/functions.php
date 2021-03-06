@@ -59,9 +59,9 @@ function deleteAccountOwner(int $name) : void
 {
     $clients = readData();
     foreach ($clients as $key => $_) { // value not clear yet
-        if($accountOwner['Name'] == $name)
+        if($accountOwner['C'] == $name)
         {
-            unset($accountOwner['Name']);
+            unset($accountOwner['C']);
             writeData($clients);
             return;
         }
