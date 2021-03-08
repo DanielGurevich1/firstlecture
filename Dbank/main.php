@@ -17,21 +17,24 @@ require __DIR__.'/bootstrap.php';
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Surname</th>
+      <th scope="col">Balance</th>
+      <th scope="col">ACC NUM</th>
+      
     </tr>
   </thead>
   <tbody>
 
   <?php foreach(read() as $client) : ?>
-  <?php  _d($client);?>
 
     <tr>
-      <th scope="row">1</th>
-      <td><?= $client['A'] ?></td>
-      <td><?= $client['B'] ?></td>
-      <td><?= $client['C'] ?></td>
+      <th scope="row"><?= $client['id'] ?></th>
+      <td><?= $client['name'] ?></td>
+      <td><?= $client['surname'] ?></td>
+      
+      <td><?= $client['balance'] ?></td>
+      <td><?= $client['AC'] ?></td>
       <!-- <td>Otto</td>
       <td>@mdo</td> -->
     </tr>

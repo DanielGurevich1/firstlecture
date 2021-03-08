@@ -18,7 +18,7 @@ function write(array $data) : void
     file_put_contents(DIR.'data/client.json', $data);
 }
 
-function getNextID() : int 
+function getNextId() : int 
 {
     if(!file_exists(DIR.'data/indexes.json'))
     {
@@ -39,7 +39,7 @@ function getNextID() : int
 
 function getClient(int $id) : ?array
 {
-    foreach(readData() as $client) {
+    foreach(read() as $client) {
         if ($client['id'] == $id) {
             return $client;
         }
@@ -47,12 +47,11 @@ function getClient(int $id) : ?array
     return null;
 }
 
-function createClient($name, $surname, $idNum) : void
+function createClient($client) : void
 {
     $clients = read();
-    $id = getNextId();
-    $accountOwner = ['A' => $id,'Name' => $name, 'B' => $surname, 'C' => $idNum, 'Account number' => $accountNum];
-
+    //$id = getNextId();
+    $client['id'] = getNextId();
     $clients[] = $client;
     write($clients);
 }

@@ -1,12 +1,17 @@
 <?php 
 include_once __DIR__.'/header.php';
 require __DIR__.'/bootstrap.php';
-
+$balance = 0;
+$individualAccountNum = rand(1234, 9876);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $client = $_POST['A']['B']['C'] ?? 0;
-    
-    $client = (array) $client;
-    createClient($name, $surname, $idNum); // sukuria
+  $client['name'] = $_POST['name'];
+  $client['surname'] = $_POST['surname'];
+  $client['id'] = $_POST['id'];
+  $client['balance'] = $_POST['balance'];
+  $client['AC'] = $_POST['AC'];
+  // print_r($client);
+  // die;
+    createClient($client); // sukuria
     
     header('Location: '.URL.'main.php');
     die;
@@ -25,16 +30,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <form class="row row-cols-lg-auto align-items-center" method="post">
 <div class="row">
   <div class="col">
-    <input type="text" class="form-control" placeholder="First name" aria-label="First name" value="" name="A">
+    <input type="text" class="form-control" placeholder="First name" aria-label="First name" value="" name="name">
   </div>
   <div class="col">
-    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" value="" name="B">
+    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" value="" name="surname">
   </div>
   <div class="col">
-    <input type="number" class="form-control" placeholder="ID number" aria-label="ID Number" value="" name="C">
+    <input type="number" class="form-control" placeholder="ID number" aria-label="ID Number" value="" name="id">
   </div>
-  <!-- <div class="col">
-    <input type="number" class="form-control" placeholder="Balance" aria-label="Balance" value="<?=$balance?>" name="D" >
+  <div class="col">
+    <input type="number" class="form-control" placeholder="Balance" aria-label="Balance" value="<?=$balance?>" name="balance" >
   </div>
   <div class="col">
     <input type="number" class="form-control" placeholder="Account number" aria-label="Account_number" value="<?=$individualAccountNum?>" name="AC" >
